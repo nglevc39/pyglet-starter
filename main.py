@@ -1,14 +1,17 @@
-import pyglet
-window = pyglet.window.Window()
+import pyglet # import the library
+win= pyglet.window.Window() # create the window
 
-label = pyglet.text.Label('Hello, world',
-                          font_name='Times New Roman',
-                          font_size=36,
-                          x=window.width//2, y=window.height//2,
-                          anchor_x='center', anchor_y='center')
-@window.event
+# Create a sprite
+img= pyglet.image.load('Nature.jpg')
+
+def update(dt):
+  pass
+
+# Start the event loop
+@win.event
 def on_draw():
-    window.clear()
-    label.draw()
+    win.clear()
+    img.blit(100, 150)
 
+pyglet.clock.schedule(update) 
 pyglet.app.run()
