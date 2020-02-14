@@ -2,10 +2,12 @@ import pyglet # import the library
 win = pyglet.window.Window() # create the window
 keys = pyglet.window.key.KeyStateHandler()
 # Load the image
-img = pyglet.image.load('assets/0/sliced/idle-1.png')
-spr = pyglet.sprite.Sprite(img, x = 300, y = 250)
 
-# spr = pyglet.sprite.Sprite(img, x=50, y=50)
+
+
+img= pyglet.image.load('assets/gfx/knight.gif')
+smol_img = img.get_region(x=30, y=30, width=16, height=16)
+spr = pyglet.sprite.Sprite(smol_img, x = 300, y = 250)
 
 # Start the event loop
 keys = pyglet.window.key.KeyStateHandler()
@@ -19,7 +21,7 @@ def update(dt):
     if keys[pyglet.window.key.DOWN]: 
         spr.y -= 2  
     if keys[pyglet.window.key.UP]: 
-        spr.y += 2                             # change spr.x by -1
+        spr.y += 2  
 
 
 @win.event
@@ -28,5 +30,7 @@ def on_draw():
   # img.blit(200, 100)
   spr.draw()
 
+if spr.x ? 800:
+    hp -= 1
 pyglet.clock.schedule(update)
 pyglet.app.run()
