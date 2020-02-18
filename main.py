@@ -30,7 +30,5 @@ def on_draw():
   # img.blit(200, 100)
   spr.draw()
 
-if spr.x ? 800:
-    hp -= 1
 pyglet.clock.schedule(update)
 pyglet.app.run()
